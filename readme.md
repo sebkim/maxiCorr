@@ -4,6 +4,7 @@ It tries to find the classes of cell-lines so that the correlation difference be
 
 ##Usage
 
-###preprocess initial data
+preprocess initial data
 * python dataPrepro.py
 * python dataPrepro2.py
+
