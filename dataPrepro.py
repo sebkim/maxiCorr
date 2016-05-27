@@ -2,6 +2,8 @@
 
 import pickle
 import numpy as np
+import os
+
 # each keyVal of probes {{probe_name}}: ({{geneName}}, {{entrezID}})
 f=open('./data/GPL570-13270.txt','r')
 lines=f.readlines()
@@ -49,5 +51,8 @@ gNames=[i[0] for i in processedGenes]
 gExpressions=[i[1] for i in processedGenes]
 gNames=np.array(gNames)
 gExpressions=np.array(gExpressions)
+
+if not os.path.exists('./prePickles'):
+	os.makedirs('./prePickles')
 pickle.dump(gNames,open('./prePickles/gNames.pickle','w'))
 pickle.dump(gExpressions,open('./prePickles/gExpressions.pickle','w'))
