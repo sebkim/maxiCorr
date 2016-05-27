@@ -13,10 +13,10 @@ sickAndNormal=np.hsplit(genes,2)
 sick=sickAndNormal[0]
 normal=sickAndNormal[1]
 
-#test purpose for fast execution
-sick=sick[:1000]
-normal=normal[:1000]
-###
+# #test purpose for fast execution
+# sick=sick[:1000]
+# normal=normal[:1000]
+# ###
 
 sickCorr=np.corrcoef(sick)
 normalCorr=np.corrcoef(normal)
