@@ -1,4 +1,4 @@
-# preprocessing data
+# preprocessing data (gExpressions.pickle, and gNames.pickle)
 
 import pickle
 import numpy as np
