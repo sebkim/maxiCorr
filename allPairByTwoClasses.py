@@ -32,9 +32,9 @@ f=open('./logAllPairByTwoClasses.log','w',0)
 for rawI in range(numGene):
 	for rawJ in range(rawI+1,numGene):
 		sickCorrFlattened[itera]=sickCorr[rawI][rawJ]
-		# normalCorrFlattened[itera]=normalCorr[rawI][rawJ]
-		# genePairNames[itera]=(geneNames[rawI],geneNames[rawJ])
-		# genePairIndnum[itera]=(rawI,rawJ)
+		normalCorrFlattened[itera]=normalCorr[rawI][rawJ]
+		genePairNames[itera]=(geneNames[rawI],geneNames[rawJ])
+		genePairIndnum[itera]=(rawI,rawJ)
 		itera+=1
 	f.write('rawI: {} complete!\n'.format(rawI))
 
