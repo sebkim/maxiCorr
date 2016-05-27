@@ -1,6 +1,7 @@
 # find all pair correlations by two classes (sick and normal).
 # x-axis is sick, and y-axis is normal.
-# it outputs sickCorrFlattened.pickle normalCorrFalttened.pickle, genePairNames.pickle, genePairIndnum.pickle .
+# it outputs sickCorrFlattened.pickle normalCorrFalttened.pickle, genePairIndnum.pickle .
+# flattened array comes from 2d array. flattened array does not consider diagonal elements and also left lower parts.
 
 import pickle
 import numpy as np
@@ -24,7 +25,6 @@ normalCorr=np.corrcoef(normal)
 numGene=sickCorr.shape[0]
 sickCorrFlattened=np.zeros((numGene*numGene-numGene)/2,dtype=np.float32)
 normalCorrFlattened=np.zeros((numGene*numGene-numGene)/2,dtype=np.float32)
-genePairNames=np.zeros((numGene*numGene-numGene)/2,dtype=object)
 genePairIndnum=np.zeros((numGene*numGene-numGene)/2,dtype=object)
 
 itera=0
@@ -33,14 +33,12 @@ for rawI in range(numGene):
 	for rawJ in range(rawI+1,numGene):
 		sickCorrFlattened[itera]=sickCorr[rawI][rawJ]
 		normalCorrFlattened[itera]=normalCorr[rawI][rawJ]
-		genePairNames[itera]=(geneNames[rawI],geneNames[rawJ])
 		genePairIndnum[itera]=(rawI,rawJ)
 		itera+=1
 	f.write('rawI: {} complete!\n'.format(rawI))
 
 pickle.dump(sickCorrFlattened,open('./prePickles/sickCorrFlattened.pickle','w'))
 pickle.dump(normalCorrFlattened,open('./prePickles/normalCorrFlattened.pickle','w'))
-pickle.dump(genePairNames,open('./prePickles/genePairNames.pickle','w'))
 pickle.dump(genePairIndnum,open('./prePickles/genePairIndnum.pickle','w'))
 
 
