@@ -8,10 +8,10 @@
 # 		genePairIndnum[itera]=(i,j)
 # 	print i
 
-import pickle
-genePairIndnum1=pickle.load(open('./prePickles/genePairIndnum1.pickle','r'))
-genePairIndnum2=pickle.load(open('./prePickles/genePairIndnum2.pickle','r'))
-genePairIndnum=zip(genePairIndnum1, genePairIndnum2)
-
 # import pickle
-# sickCorrFlattened=pickle.load(open('./prePickles/sickCorrFlattened.pickle','r'))
+# genePairIndnum1=pickle.load(open('./prePickles/genePairIndnum1.pickle','r'))
+# genePairIndnum2=pickle.load(open('./prePickles/genePairIndnum2.pickle','r'))
+# genePairIndnum=zip(genePairIndnum1, genePairIndnum2)
+
+import pickle
+sickCorrFlattened=pickle.load(open('./prePickles/sickCorrFlattened.pickle','r'))
