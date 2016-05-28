@@ -23,23 +23,20 @@ sickCorr=np.corrcoef(sick)
 normalCorr=np.corrcoef(normal)
 
 numGene=sickCorr.shape[0]
-# sickCorrFlattened=np.zeros((numGene*numGene-numGene)/2,dtype=np.float32)
-# normalCorrFlattened=np.zeros((numGene*numGene-numGene)/2,dtype=np.float32)
-genePairIndnum=np.zeros((numGene*numGene-numGene)/2,dtype=object)
+sickCorrFlattened=np.zeros((numGene*numGene-numGene)/2,dtype=np.float32)
+normalCorrFlattened=np.zeros((numGene*numGene-numGene)/2,dtype=np.float32)
 
 itera=0
 f=open('./logAllPairByTwoClasses.log','w',0)
 for rawI in range(numGene):
 	for rawJ in range(rawI+1,numGene):
-		# sickCorrFlattened[itera]=sickCorr[rawI][rawJ]
-		# normalCorrFlattened[itera]=normalCorr[rawI][rawJ]
-		genePairIndnum[itera]=(rawI,rawJ)
+		sickCorrFlattened[itera]=sickCorr[rawI][rawJ]
+		normalCorrFlattened[itera]=normalCorr[rawI][rawJ]
 		itera+=1
 	f.write('rawI: {} complete!\n'.format(rawI))
 
-# pickle.dump(sickCorrFlattened,open('./prePickles/sickCorrFlattened.pickle','w'))
-# pickle.dump(normalCorrFlattened,open('./prePickles/normalCorrFlattened.pickle','w'))
-pickle.dump(genePairIndnum,open('./prePickles/genePairIndnum.pickle','w'))
+pickle.dump(sickCorrFlattened,open('./prePickles/sickCorrFlattened.pickle','w'))
+pickle.dump(normalCorrFlattened,open('./prePickles/normalCorrFlattened.pickle','w'))
 
 
 # plt.scatter(sickCorrFlattened,normalCorrFlattened)

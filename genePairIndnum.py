@@ -12,7 +12,7 @@ genePairIndnum1=np.zeros((numGene*numGene-numGene)/2,dtype=np.int32)
 genePairIndnum2=np.zeros((numGene*numGene-numGene)/2,dtype=np.int32)
 
 itera=0
-f=open('./logGnePairIndnum.log','w',0)
+f=open('./logGenePairIndnum.log','w',0)
 for rawI in range(numGene):
 	for rawJ in range(rawI+1,numGene):
 		genePairIndnum1[itera]=rawI
