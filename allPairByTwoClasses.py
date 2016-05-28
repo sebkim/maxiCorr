@@ -38,10 +38,8 @@ for rawI in range(numGene):
 pickle.dump(sickCorrFlattened,open('./prePickles/sickCorrFlattened.pickle','w'))
 pickle.dump(normalCorrFlattened,open('./prePickles/normalCorrFlattened.pickle','w'))
 
-
 # plt.scatter(sickCorrFlattened,normalCorrFlattened)
 # plt.show()
 
-# a=pickle.load(open('./prePickles/sickAndNormalCorrFlattened.pickle','r'))
-# b=pickle.load(open('./prePickles/genePairNames.pickle','r'))
-# c=pickle.load(open('./prePickles/genePairIndnum.pickle','r'))
+# a=pickle.load(open('./prePickles/sickCorrFlattened.pickle','r'))
+# b=pickle.load(open('./prePickles/normalCorrFlattened.pickle','r'))
